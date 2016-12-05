@@ -33,8 +33,7 @@ class LoginVC: UIViewController {
                 //if error
                 if error != nil{
                     if FIRAuthErrorCode.errorCodeUserNotFound.rawValue == 17011{
-                        
-                        
+      
                         //we create a new user
                         FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (result, error) in
                             //if error we show error
