@@ -15,7 +15,7 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
+    @IBOutlet weak var infoLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -32,37 +32,29 @@ class LoginVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd) { (user, error) in
                 //if error
                 if error != nil{
-                    if FIRAuthErrorCode.errorCodeUserNotFound.rawValue == 17011{
-      
-                        //we create a new user
-                        FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (result, error) in
-                            //if error we show error
-                            if error != nil{
-                                
-                                print("failed creating new user:\(error.debugDescription)")
-                                self.showErrorAlert(title: "Could not creat account", msg: "there was a problem creating the account please try later")
-                            }else{
-                                
-                                //we save the info in local memory
-                                UserDefaults.standard.set(result?.uid, forKey: KEY_UID)
-                                
-                                //SignInWithEmail we are sure this exist
-                                FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: nil)
-                                
-                                //send next View
-                                self.performSegue(withIdentifier: "goNext", sender: nil)
-                                print("loggedIn :)")
-                                
-                            }
-                            
-                        })
-                        print(error.debugDescription)
+                    //handleling specific errors
+                    if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                        
+                        switch errCode {
+                        case .errorCodeInvalidEmail:
+                            self.showErrorAlert(title: "Invalid Email", msg:"please check your email and try again.")
+                            print("invalid email")
+                        case .errorCodeEmailAlreadyInUse:
+                            self.infoLabel.text = "Invalid email, this mail is already used."
+                            print("in use")
+                        case .errorCodeUserNotFound:
+                            self.infoLabel.text = "User not found, if is your first time, create an account or use the facebook login"
+                            print("user not found")
+                        case .errorCodeNetworkError:
+                            self.infoLabel.text = "Network error, try again in a second."
+                            print("network error")
+                        case .errorCodeWrongPassword:
+                            self.infoLabel.text = "Wrong password, please make sure is correct."
+                            print("wrong password")
+                        default:
+                            print("Create User Error: \(error)")
+                        }    
                     }
-                    
-                    //error num 2 
-                    
-                    //error num3
-                    print(error.debugDescription)
                     
                 }else{
                     //if an error doesn't exist
@@ -77,7 +69,7 @@ class LoginVC: UIViewController {
         }
     }
     
-    //func showe alert
+    //func showe alert pop up
     func showErrorAlert(title: String, msg: String){
         
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)

@@ -24,19 +24,34 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuW-N2-RwK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account and be part of the HR family." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i01-sJ-fUI">
+                                        <rect key="frame" x="72" y="101" width="231" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="DOL-aT-yRf">
+                                        <rect key="frame" x="72" y="8" width="231" height="79"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="231" id="3Z5-vk-7V4"/>
+                                            <constraint firstAttribute="height" constant="79" id="7K6-g5-nlB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="c6c-0H-685">
-                                <rect key="frame" x="91.5" y="28" width="192" height="83"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="1XX-1c-SvS"/>
-                                    <constraint firstAttribute="width" constant="192" id="g3Q-xj-bLQ"/>
+                                    <constraint firstItem="DOL-aT-yRf" firstAttribute="top" secondItem="cuW-N2-RwK" secondAttribute="top" constant="8" id="IM7-JQ-pGI"/>
+                                    <constraint firstItem="i01-sJ-fUI" firstAttribute="leading" secondItem="DOL-aT-yRf" secondAttribute="leading" id="Q60-Jw-kjL"/>
+                                    <constraint firstItem="i01-sJ-fUI" firstAttribute="top" secondItem="DOL-aT-yRf" secondAttribute="bottom" constant="14" id="by9-cH-Xoc"/>
+                                    <constraint firstItem="i01-sJ-fUI" firstAttribute="trailing" secondItem="DOL-aT-yRf" secondAttribute="trailing" id="v9t-NV-WnB"/>
+                                    <constraint firstItem="DOL-aT-yRf" firstAttribute="centerX" secondItem="cuW-N2-RwK" secondAttribute="centerX" id="wRE-5Q-uEc"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-RY-BTn" customClass="StyleTextField" customModule="HomeRoomApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="191" width="343" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="X2A-4P-d7G"/>
+                                    <constraint firstAttribute="height" constant="45" id="Ren-yv-GaA"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -119,35 +134,31 @@
                             <constraint firstItem="l5y-6M-h1d" firstAttribute="centerX" secondItem="Jfy-P2-HRh" secondAttribute="centerX" id="0rm-aL-UVn"/>
                             <constraint firstItem="nrn-ya-Tnl" firstAttribute="top" secondItem="Pec-WL-RNS" secondAttribute="bottom" constant="28" id="1V5-xJ-Da3"/>
                             <constraint firstAttribute="trailing" secondItem="6PO-Ka-fQC" secondAttribute="trailing" id="4VR-8f-Vo5"/>
-                            <constraint firstItem="JSo-7D-WSl" firstAttribute="leading" secondItem="8Pz-RY-BTn" secondAttribute="leading" id="6P5-yS-fIN"/>
+                            <constraint firstItem="JSo-7D-WSl" firstAttribute="trailing" secondItem="8Pz-RY-BTn" secondAttribute="trailing" id="7q0-Ej-3Ci"/>
                             <constraint firstItem="6PO-Ka-fQC" firstAttribute="leading" secondItem="Jfy-P2-HRh" secondAttribute="leading" id="830-Bh-ifh"/>
-                            <constraint firstItem="c6c-0H-685" firstAttribute="centerX" secondItem="Jfy-P2-HRh" secondAttribute="centerX" id="846-9G-eDZ"/>
                             <constraint firstAttribute="trailing" secondItem="cuW-N2-RwK" secondAttribute="trailing" id="EgF-Hy-7dS"/>
                             <constraint firstItem="cuW-N2-RwK" firstAttribute="top" secondItem="Jfy-P2-HRh" secondAttribute="top" id="HYm-SD-0Zy"/>
-                            <constraint firstItem="8Pz-RY-BTn" firstAttribute="centerX" secondItem="Jfy-P2-HRh" secondAttribute="centerX" id="JkN-rC-NIB"/>
                             <constraint firstItem="Zvj-XH-0Nj" firstAttribute="top" secondItem="6PO-Ka-fQC" secondAttribute="bottom" id="L3F-x7-0CB"/>
+                            <constraint firstItem="JSo-7D-WSl" firstAttribute="leading" secondItem="8Pz-RY-BTn" secondAttribute="leading" id="NJB-du-qfM"/>
                             <constraint firstItem="0YS-PB-vhG" firstAttribute="top" secondItem="l5y-6M-h1d" secondAttribute="bottom" constant="8" id="NoR-0B-jD9"/>
                             <constraint firstItem="c7b-zA-e9W" firstAttribute="centerX" secondItem="Jfy-P2-HRh" secondAttribute="centerX" id="PhD-D2-pfY"/>
-                            <constraint firstItem="JSo-7D-WSl" firstAttribute="trailing" secondItem="8Pz-RY-BTn" secondAttribute="trailing" id="R2l-AB-QZ4"/>
+                            <constraint firstItem="8Pz-RY-BTn" firstAttribute="trailing" secondItem="Jfy-P2-HRh" secondAttribute="trailingMargin" id="RwA-kK-KJR"/>
                             <constraint firstItem="Pec-WL-RNS" firstAttribute="top" secondItem="l5y-6M-h1d" secondAttribute="bottom" constant="8" id="Smw-an-klF"/>
-                            <constraint firstItem="c6c-0H-685" firstAttribute="top" secondItem="Lcc-vY-mWW" secondAttribute="bottom" constant="8" id="StJ-JW-WbZ"/>
                             <constraint firstItem="c7b-zA-e9W" firstAttribute="top" secondItem="nrn-ya-Tnl" secondAttribute="bottom" constant="49" id="Us1-Rq-9S6"/>
                             <constraint firstItem="cuW-N2-RwK" firstAttribute="leading" secondItem="Jfy-P2-HRh" secondAttribute="leading" id="VTg-Pd-wYR"/>
-                            <constraint firstItem="JSo-7D-WSl" firstAttribute="top" secondItem="8Pz-RY-BTn" secondAttribute="bottom" constant="8" id="VfJ-ro-Qji"/>
-                            <constraint firstItem="8Pz-RY-BTn" firstAttribute="trailing" secondItem="Jfy-P2-HRh" secondAttribute="trailingMargin" id="Xbh-pq-2De"/>
-                            <constraint firstItem="8Pz-RY-BTn" firstAttribute="leading" secondItem="Jfy-P2-HRh" secondAttribute="leadingMargin" id="a3b-4g-Yot"/>
+                            <constraint firstItem="8Pz-RY-BTn" firstAttribute="leading" secondItem="Jfy-P2-HRh" secondAttribute="leadingMargin" id="amT-IC-ofQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0YS-PB-vhG" secondAttribute="trailing" constant="43" id="cdU-hV-gli"/>
                             <constraint firstItem="l5y-6M-h1d" firstAttribute="top" secondItem="JSo-7D-WSl" secondAttribute="bottom" constant="8" id="dDZ-zw-o5b"/>
                             <constraint firstItem="nrn-ya-Tnl" firstAttribute="centerX" secondItem="Jfy-P2-HRh" secondAttribute="centerX" id="h08-PE-5Cj"/>
+                            <constraint firstItem="8Pz-RY-BTn" firstAttribute="top" secondItem="Lcc-vY-mWW" secondAttribute="bottom" constant="171" id="iX9-rC-zxi"/>
                             <constraint firstItem="Pec-WL-RNS" firstAttribute="leading" secondItem="Jfy-P2-HRh" secondAttribute="leadingMargin" constant="42" id="n3s-ez-KPs"/>
-                            <constraint firstItem="8Pz-RY-BTn" firstAttribute="top" secondItem="c6c-0H-685" secondAttribute="bottom" constant="80" id="rOQ-g1-Gug">
-                                <variation key="heightClass=compact-widthClass=compact" constant="20"/>
-                            </constraint>
+                            <constraint firstItem="JSo-7D-WSl" firstAttribute="top" secondItem="8Pz-RY-BTn" secondAttribute="bottom" constant="8" id="tUg-jo-YJC"/>
                             <constraint firstItem="6PO-Ka-fQC" firstAttribute="top" secondItem="cuW-N2-RwK" secondAttribute="bottom" id="vAn-mi-gBd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="8Pz-RY-BTn" id="dzP-tX-TXc"/>
+                        <outlet property="infoLabel" destination="i01-sJ-fUI" id="n1h-yy-oPo"/>
                         <outlet property="passwordField" destination="JSo-7D-WSl" id="gHz-10-4tJ"/>
                         <segue destination="QK4-S1-ISY" kind="show" identifier="goNext" id="jh3-pF-ILi"/>
                     </connections>
@@ -607,7 +618,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YbK-Zp-dJY" id="iyF-Jz-iE5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hr2" translatesAutoresizingMaskIntoConstraints="NO" id="3lZ-fL-95r" customClass="StyleImage" customModule="HomeRoomApp" customModuleProvider="target">
@@ -764,7 +775,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bS1-6a-nPi" id="IE8-9N-EB6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hr2" translatesAutoresizingMaskIntoConstraints="NO" id="F3E-ci-Dod" customClass="StyleImage" customModule="HomeRoomApp" customModuleProvider="target">
