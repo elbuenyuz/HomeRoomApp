@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="-762.39999999999998" y="-1114.0929535232385"/>
         </scene>
-        <!--View Controller-->
+        <!--Create AccountVC-->
         <scene sceneID="SrW-qm-3qB">
             <objects>
-                <viewController id="cD8-oY-aD6" sceneMemberID="viewController">
+                <viewController id="cD8-oY-aD6" customClass="CreateAccountVC" customModule="HomeRoomApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DhA-wa-w8N"/>
                         <viewControllerLayoutGuide type="bottom" id="YfN-s8-SbN"/>
@@ -181,7 +181,40 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rC-QU-BqS">
                                 <rect key="frame" x="16" y="0.0" width="343" height="590"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTy-Ll-zpY">
+                                        <rect key="frame" x="0.0" y="0.0" width="28" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="QtW-ua-2m3"/>
+                                            <constraint firstAttribute="height" constant="30" id="Y68-cb-RKy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleColor" red="0.9987706542" green="0.71397900579999996" blue="0.02791297249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="sAq-Ee-jcP" kind="show" id="h8G-dg-OP8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8c-rC-WkB" customClass="StyleButton" customModule="HomeRoomApp" customModuleProvider="target">
+                                        <rect key="frame" x="74" y="486" width="195" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="e6n-fH-ZTg"/>
+                                            <constraint firstAttribute="width" constant="195" id="fDk-Lc-fZ1"/>
+                                        </constraints>
+                                        <state key="normal" title="CREATE ACCOUNT"/>
+                                        <connections>
+                                            <action selector="createAccountBtnPressed:" destination="cD8-oY-aD6" eventType="touchUpInside" id="ZGi-dr-18H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="tTy-Ll-zpY" firstAttribute="top" secondItem="0rC-QU-BqS" secondAttribute="top" id="H4u-cr-bsc"/>
+                                    <constraint firstItem="n8c-rC-WkB" firstAttribute="top" secondItem="0rC-QU-BqS" secondAttribute="top" constant="486" id="LHa-Oc-Vsd"/>
+                                    <constraint firstItem="n8c-rC-WkB" firstAttribute="centerX" secondItem="0rC-QU-BqS" secondAttribute="centerX" id="gBl-Nl-UFF"/>
+                                    <constraint firstItem="tTy-Ll-zpY" firstAttribute="leading" secondItem="0rC-QU-BqS" secondAttribute="leading" id="qjj-7j-6VH"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="gIi-JF-TEq">
                                 <rect key="frame" x="0.0" y="589" width="375" height="78"/>
@@ -225,15 +258,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXM-Bs-bve" customClass="StyleButton" customModule="HomeRoomApp" customModuleProvider="target">
-                                <rect key="frame" x="42" y="482" width="291" height="50"/>
-                                <color key="backgroundColor" red="0.10885495692491531" green="0.67236626148223877" blue="0.94558447599411011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="NO7-Jx-UTa"/>
-                                    <constraint firstAttribute="width" constant="291" id="ioZ-j4-1As"/>
-                                </constraints>
-                                <state key="normal" title="CREATE ACCOUNT"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="5Wo-BV-9Hw">
                                 <rect key="frame" x="72" y="8" width="231" height="79"/>
                                 <constraints>
@@ -260,7 +284,6 @@
                             <constraint firstItem="3Tu-tr-IxF" firstAttribute="top" secondItem="dF5-G1-Tui" secondAttribute="bottom" constant="25" id="LmC-AW-d5O"/>
                             <constraint firstItem="dF5-G1-Tui" firstAttribute="top" secondItem="ymt-sb-GLH" secondAttribute="bottom" constant="20" id="M6h-LI-IeY"/>
                             <constraint firstItem="ILJ-tL-a1c" firstAttribute="leading" secondItem="5Wo-BV-9Hw" secondAttribute="leading" id="PPD-kL-6C8"/>
-                            <constraint firstItem="AXM-Bs-bve" firstAttribute="centerX" secondItem="IRN-O2-dkD" secondAttribute="centerX" id="S5h-40-5Au"/>
                             <constraint firstItem="0rC-QU-BqS" firstAttribute="leading" secondItem="IRN-O2-dkD" secondAttribute="leadingMargin" id="XLD-Mt-FHt"/>
                             <constraint firstItem="gIi-JF-TEq" firstAttribute="leading" secondItem="IRN-O2-dkD" secondAttribute="leading" id="aei-jV-ZZl"/>
                             <constraint firstItem="dF5-G1-Tui" firstAttribute="trailing" secondItem="ymt-sb-GLH" secondAttribute="trailing" id="dCD-Mr-WeG"/>
@@ -274,14 +297,20 @@
                             <constraint firstItem="TAe-KV-9tI" firstAttribute="leading" secondItem="3Tu-tr-IxF" secondAttribute="leading" id="uuT-6S-FDd"/>
                             <constraint firstItem="TAe-KV-9tI" firstAttribute="top" secondItem="3Tu-tr-IxF" secondAttribute="bottom" constant="23" id="vaG-iV-mh9"/>
                             <constraint firstItem="dF5-G1-Tui" firstAttribute="leading" secondItem="ymt-sb-GLH" secondAttribute="leading" id="voN-IR-9gk"/>
-                            <constraint firstItem="AXM-Bs-bve" firstAttribute="top" secondItem="TAe-KV-9tI" secondAttribute="bottom" constant="53" id="xan-RB-1Eu"/>
                             <constraint firstItem="ymt-sb-GLH" firstAttribute="leading" secondItem="0rC-QU-BqS" secondAttribute="leading" id="z50-Zw-NOe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="dF5-G1-Tui" id="0Ce-a9-NRP"/>
+                        <outlet property="pwdField" destination="3Tu-tr-IxF" id="fyj-NE-Izc"/>
+                        <outlet property="rePwdField" destination="TAe-KV-9tI" id="aIx-wK-Lfd"/>
+                        <outlet property="usernameField" destination="ymt-sb-GLH" id="hod-yo-HGD"/>
+                        <segue destination="QK4-S1-ISY" kind="show" identifier="goNext" id="BKU-cM-fyX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9D-0I-uJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="-394.45277361319341"/>
+            <point key="canvasLocation" x="-762.39999999999998" y="-311.69415292353824"/>
         </scene>
         <!--ContactVC-->
         <scene sceneID="VnR-oD-7h3">
@@ -618,7 +647,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YbK-Zp-dJY" id="iyF-Jz-iE5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hr2" translatesAutoresizingMaskIntoConstraints="NO" id="3lZ-fL-95r" customClass="StyleImage" customModule="HomeRoomApp" customModuleProvider="target">
@@ -775,7 +804,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bS1-6a-nPi" id="IE8-9N-EB6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hr2" translatesAutoresizingMaskIntoConstraints="NO" id="F3E-ci-Dod" customClass="StyleImage" customModule="HomeRoomApp" customModuleProvider="target">
@@ -1017,6 +1046,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="GdB-P9-QM1" id="PuA-3a-1tn"/>
+                        <outlet property="welcomeUserName" destination="KBD-Xc-4WR" id="P0t-FX-Db8"/>
                         <segue destination="lC8-ez-yWa" kind="show" identifier="macs" id="BIM-0Q-4b7"/>
                         <segue destination="O2L-69-Uou" kind="show" identifier="feedback" id="Fmk-8t-Kqx"/>
                     </connections>

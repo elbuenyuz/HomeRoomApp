@@ -14,7 +14,8 @@ import MapKit
 class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var newItem = HRElements(name: "Volcano", type: "mac", ingredients: "havarti,caramelizedonion,chicken,brocoli,peas,breadcrumbs", imgPath: "volcano.jpg", favorites: true, glutenFriendly: true, price: 12.50, description: "try the new volcano is has the perfect amount of spicy and cheese!.")
+    @IBOutlet weak var welcomeUserName: UILabel!
+    
     
     var arrayImg = [UIImage]()
     
@@ -27,11 +28,12 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         collectionView.dataSource = self
         collectionView.reloadData()
         
+        //create image array
         for x in 0...6{
             
             if let imgPath = UIImage(named: "\(x).png"){
                 
-                
+                //append to array
                 arrayImg.append(imgPath)
             }
         }
@@ -78,7 +80,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         return CGSize(width: 10, height: 10)
         
     }
-    //func
+
     
     @IBAction func ifBtnPressed(_ sender: AnyObject) {
         
@@ -86,9 +88,9 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
             
             switch condition {
             case 0:
-                performSegue(withIdentifier: "macs", sender: sender.tag)
+                performSegue(withIdentifier: "macs", sender: nil)
             case 1:
-                performSegue(withIdentifier: "macs", sender: sender.tag)
+                performSegue(withIdentifier: "macs", sender: nil)
             case 2:
                 performSegue(withIdentifier: "feedback", sender: nil)
             case 3:
