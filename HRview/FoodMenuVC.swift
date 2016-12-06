@@ -27,6 +27,10 @@ class FoodMenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         
         
     }
+    @IBAction func backBtnPressed(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         

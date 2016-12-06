@@ -17,6 +17,8 @@ class StyleTextField: UITextField {
         // Drawing code
     }
     */
+    var placeHolder = NSMutableAttributedString()
+    
     override func awakeFromNib() {
         
         layer.cornerRadius = 2.0
@@ -24,6 +26,7 @@ class StyleTextField: UITextField {
         layer.shadowRadius = 5.0
         layer.shadowOpacity = 0.8
         layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        
+       
+      
     }
 }

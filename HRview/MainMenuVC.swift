@@ -16,11 +16,24 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var welcomeUserName: UILabel!
     
-    
+    private var _usernameTitle:String = ""
     var arrayImg = [UIImage]()
+    
+    var usernameTitle:String{
+        get{
+            return _usernameTitle
+        }
+        set{
+            _usernameTitle = newValue
+        }
+    }
+    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //call the name of the user
+        welcomeUserName.text = "Welcome \(usernameTitle)"
         
         // Do any additional setup after loading the view.
         
@@ -90,6 +103,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
             case 0:
                 performSegue(withIdentifier: "macs", sender: nil)
             case 1:
+                //specials macs
                 performSegue(withIdentifier: "macs", sender: nil)
             case 2:
                 performSegue(withIdentifier: "feedback", sender: nil)
@@ -103,6 +117,10 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
                 break
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //especific actiopn for segue.
     }
 }
 

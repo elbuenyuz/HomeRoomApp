@@ -13,6 +13,7 @@ import Firebase
 class LoginVC: UIViewController {
     
     
+    @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var infoLabel: UILabel!
@@ -24,10 +25,11 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func loginBtnPressed
-        (_ sender: Any) {
+    
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        
         //email and pwd diferent ""
-        if let email = emailField.text, email != "", let pwd = passwordField.text, pwd != ""{
+        if let email = emailField.text, email != "", let pwd = passwordField.text, pwd != "",let username = usernameField.text, username != ""{
             //if email and pwd exist we signin
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd) { (user, error) in
                 //if error
@@ -60,15 +62,26 @@ class LoginVC: UIViewController {
                     //if an error doesn't exist
                     //local memory we saved the user uid
                     UserDefaults.standard.setValue(user?.uid,forKey:KEY_UID)
+                    UserDefaults.standard.setValue(username, forKey: KEY_USERNAME)
                     //SignInWithEmail
                     FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: nil)
-                    self.performSegue(withIdentifier: "goNext", sender: nil)
+                    
+                    print("name of user: \(username)")
+                    self.performSegue(withIdentifier: "goNext", sender: username)
+                    
+                    
                     
                 }
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MainMenuVC{
+            if let userName = sender as? String{
+                destination.usernameTitle = userName
+            }
+        }
+    }
     //func showe alert pop up
     func showErrorAlert(title: String, msg: String){
         

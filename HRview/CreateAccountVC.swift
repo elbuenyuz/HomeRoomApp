@@ -25,6 +25,10 @@ class CreateAccountVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
     //function in charge of create a new user account
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         //check all the texfields requirements
@@ -75,4 +79,19 @@ class CreateAccountVC: UIViewController {
             print("The passwords that you enter doesn't match.")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MainMenuVC{
+            if let userName = sender as? String{                
+                destination.usernameTitle = userName
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
