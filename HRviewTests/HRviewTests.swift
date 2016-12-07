@@ -6,8 +6,9 @@
 //  Copyright © 2016 simpleCoding. All rights reserved.
 //
 
+
 import XCTest
-@testable import HRview
+@testable import HomeRoomApp
 
 class HRviewTests: XCTestCase {
     

@@ -68,7 +68,7 @@ class FoodMenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell") as? MenuCell{
-            cell.confCell(img: arrayImg[indexPath.row], named: ARRAY_MENU_NAMES[indexPath.row])
+            cell.confCell(arrayImg[indexPath.row], named: ARRAY_MENU_NAMES[indexPath.row])
             print("\(arrayImg.count) array , and \(ARRAY_MENU_NAMES.count)" )
             return cell
         }else{

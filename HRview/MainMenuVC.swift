@@ -16,7 +16,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var welcomeUserName: UILabel!
     
-    private var _usernameTitle:String = ""
+    fileprivate var _usernameTitle:String = ""
     var arrayImg = [UIImage]()
     
     var usernameTitle:String{
@@ -73,7 +73,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as? MainMenuCell{
             
             
-            cell.confCell(img: arrayImg[indexPath.row], lbNAme: ARRAY_NAMES_MENU[indexPath.row] ,index:indexPath)
+            cell.confCell(arrayImg[indexPath.row], lbNAme: ARRAY_NAMES_MENU[indexPath.row] ,index:indexPath)
             
             return cell
         }else{

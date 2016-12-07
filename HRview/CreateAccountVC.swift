@@ -13,6 +13,7 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailField: StyleTextField!
     @IBOutlet weak var pwdField: StyleTextField!
     @IBOutlet weak var rePwdField: StyleTextField!
+    @IBOutlet weak var infoLabel:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +44,13 @@ class CreateAccountVC: UIViewController {
                         
                         switch errCode {
                         case .errorCodeInvalidEmail:
-                            //self.showErrorAlert(title: "Invalid Email", msg:"please check your email and try again.")
+                            self.infoLabel.text = "Invalid email, this mail is Invalid."
                             print("invalid email")
                         case .errorCodeEmailAlreadyInUse:
-                           // self.infoLabel.text = "Invalid email, this mail is already used."
+                            self.infoLabel.text = "Invalid email, this mail is already used."
                             print("in use")
                         case .errorCodeUserNotFound:
-                           // self.infoLabel.text = "User not found, if is your first time, create an account or use the facebook login"
+                           self.infoLabel.text = "User not found, if is your first time, create an account or use the facebook login"
                             print("user not found")
                         case .errorCodeNetworkError:
                            // self.infoLabel.text = "Network error, try again in a second."

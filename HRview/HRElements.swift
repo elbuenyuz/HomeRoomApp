@@ -11,51 +11,51 @@ import UIKit
 
 class HRElements{
     
-    private var _name: String
+    fileprivate var _name: String
     var name:String{
         _name = self.name
         return _name
     }
     
-    private var _type: String
+    fileprivate var _type: String
     var type:String{
         _type = self.type
         return _type
     }
     
-    private var _ingredients: String
+    fileprivate var _ingredients: String
     var ingredients:String{
         _ingredients = self.ingredients
         return _ingredients
     }
     
-    private var _imgPath: String
+    fileprivate var _imgPath: String
     var imgPath:String{
         _imgPath = self.imgPath
         return _imgPath
         
     }
     
-    private var _favorite: Bool
+    fileprivate var _favorite: Bool
     var favorites:Bool{
         _favorite = self.favorites
         return _favorite
     }
     
-    private var _glutenFreeFriendly: Bool
+    fileprivate var _glutenFreeFriendly: Bool
     var glutenFreeFriendly: Bool{
         _glutenFreeFriendly = self.glutenFreeFriendly
         return _glutenFreeFriendly
     }
     
-    private var _price: Double
+    fileprivate var _price: Double
     var price:Double{
         
         _price = self.price
         return _price
     }
     
-    private var _description: String
+    fileprivate var _description: String
     var description:String{
         _description = self.description
         return _description

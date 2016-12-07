@@ -9,9 +9,10 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginVC: UIViewController {
-    
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -26,6 +27,36 @@ class LoginVC: UIViewController {
     }
     
     
+    @IBAction func loginFbBtnPressed(_ sender: Any) {
+        
+        //create login
+        let faceLogin = FBSDKLoginManager()
+        
+        //login with read permission
+        faceLogin.logIn(withReadPermissions: ["email"], from: self){ (result,faceError) in
+            
+            if faceError != nil{
+                print(faceError.debugDescription)
+                
+            }else{
+                //get session token
+                if let accesToken = FBSDKAccessToken.current(){
+                    print("acces token \(accesToken)")
+                
+                    //make conexion and save user in firebase
+                    let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accesToken.tokenString))
+                    
+                    //mandamos llamar la funcion
+                    self.firebaseAuth(credential)
+                    
+                    
+                    
+                    
+                }//end creating credentials
+            }//end session token
+        }//facceLoginWithReadPermissions
+    }
+    
     @IBAction func loginBtnPressed(_ sender: Any) {
         
         //email and pwd diferent ""
@@ -39,7 +70,7 @@ class LoginVC: UIViewController {
                         
                         switch errCode {
                         case .errorCodeInvalidEmail:
-                            self.showErrorAlert(title: "Invalid Email", msg:"please check your email and try again.")
+                            self.showErrorAlert("Invalid Email", msg:"please check your email and try again.")
                             print("invalid email")
                         case .errorCodeEmailAlreadyInUse:
                             self.infoLabel.text = "Invalid email, this mail is already used."
@@ -83,12 +114,24 @@ class LoginVC: UIViewController {
         }
     }
     //func showe alert pop up
-    func showErrorAlert(title: String, msg: String){
+    func showErrorAlert(_ title: String, msg: String){
         
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
         
+    }
+    
+    func firebaseAuth(_ credential:FIRAuthCredential){
+        
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            if error != nil{
+                print("info: Unable to auth with Firebase\(error.debugDescription)")
+                
+            }else{
+                print("info: succesfully auth with firebase")
+            }
+        })
     }
 }

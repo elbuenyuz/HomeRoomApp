@@ -32,7 +32,7 @@ class MenuCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func confCell(img:UIImage,named:String){
+    func confCell(_ img:UIImage,named:String){
         
         labelMenu.text = named
         imgMenu.image = img

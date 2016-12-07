@@ -18,7 +18,7 @@ class MainMenuCell: UICollectionViewCell {
         
     }
     
-    func confCell(img:UIImage,lbNAme:String,index:IndexPath){
+    func confCell(_ img:UIImage,lbNAme:String,index:IndexPath){
         
         btnCell.setImage(img, for: UIControlState.normal)
         labelCell.text = lbNAme

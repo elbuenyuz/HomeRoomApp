@@ -18,16 +18,20 @@
 		8E1494101DEE5E2200B1C7D1 /* StyleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E14940F1DEE5E2200B1C7D1 /* StyleLabel.swift */; };
 		8E1494121DEE5E4E00B1C7D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1494111DEE5E4E00B1C7D1 /* Constants.swift */; };
 		8E467A291DF629A70039379D /* StyleBtnMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E467A281DF629A70039379D /* StyleBtnMenu.swift */; };
+		8E467A2D1DF7B1E00039379D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E467A2A1DF7B1E00039379D /* FBSDKCoreKit.framework */; };
+		8E467A2E1DF7B1E00039379D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E467A2B1DF7B1E00039379D /* FBSDKLoginKit.framework */; };
+		8E467A2F1DF7B1E00039379D /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E467A2C1DF7B1E00039379D /* FBSDKShareKit.framework */; };
+		8E467A311DF7BF620039379D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E467A301DF7BF620039379D /* DataService.swift */; };
 		8E5DC8051DF61F3300B09E40 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DC8041DF61F3300B09E40 /* CreateAccountVC.swift */; };
 		8E9A94211DF225BD008AD88B /* HRElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9A94201DF225BD008AD88B /* HRElements.swift */; };
 		8EA248CB1DF3653100319037 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EA248CA1DF3653100319037 /* GoogleService-Info.plist */; };
 		8ECAC8101DEE274100A033C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC80F1DEE274100A033C9 /* AppDelegate.swift */; };
 		8ECAC8151DEE274100A033C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECAC8131DEE274100A033C9 /* Main.storyboard */; };
-		8ECAC8181DEE274100A033C9 /* HRview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8161DEE274100A033C9 /* HRview.xcdatamodeld */; };
+		8ECAC8181DEE274100A033C9 /* HomeRoomApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8161DEE274100A033C9 /* HomeRoomApp.xcdatamodeld */; };
 		8ECAC81A1DEE274100A033C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECAC8191DEE274100A033C9 /* Assets.xcassets */; };
 		8ECAC81D1DEE274100A033C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECAC81B1DEE274100A033C9 /* LaunchScreen.storyboard */; };
 		8ECAC8281DEE274100A033C9 /* HRviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8271DEE274100A033C9 /* HRviewTests.swift */; };
-		8ECAC8331DEE274100A033C9 /* HRviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8321DEE274100A033C9 /* HRviewUITests.swift */; };
+		8ECAC8331DEE274100A033C9 /* HRviewAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8321DEE274100A033C9 /* HRviewAppUITests.swift */; };
 		8EFDCCF41DF116C000DF9DA0 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF31DF116C000DF9DA0 /* MainMenuVC.swift */; };
 		8EFDCCF61DF120B000DF9DA0 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF51DF120B000DF9DA0 /* MainMenuCell.swift */; };
 		8EFDCCF81DF145D900DF9DA0 /* StyleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF71DF145D900DF9DA0 /* StyleTextView.swift */; };
@@ -65,6 +69,10 @@
 		8E14940F1DEE5E2200B1C7D1 /* StyleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleLabel.swift; sourceTree = "<group>"; };
 		8E1494111DEE5E4E00B1C7D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E467A281DF629A70039379D /* StyleBtnMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleBtnMenu.swift; sourceTree = "<group>"; };
+		8E467A2A1DF7B1E00039379D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		8E467A2B1DF7B1E00039379D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		8E467A2C1DF7B1E00039379D /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		8E467A301DF7BF620039379D /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8E5DC8041DF61F3300B09E40 /* CreateAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		8E9A94201DF225BD008AD88B /* HRElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRElements.swift; sourceTree = "<group>"; };
 		8EA248C91DF3632000319037 /* HomeRoomApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeRoomApp.entitlements; sourceTree = SOURCE_ROOT; };
@@ -72,7 +80,7 @@
 		8ECAC80C1DEE274100A033C9 /* HomeRoomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRoomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECAC80F1DEE274100A033C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECAC8141DEE274100A033C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8ECAC8171DEE274100A033C9 /* HRview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HRview.xcdatamodel; sourceTree = "<group>"; };
+		8ECAC8171DEE274100A033C9 /* HomeRoomApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeRoomApp.xcdatamodel; sourceTree = "<group>"; };
 		8ECAC8191DEE274100A033C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ECAC81C1DEE274100A033C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ECAC81E1DEE274100A033C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,7 +88,7 @@
 		8ECAC8271DEE274100A033C9 /* HRviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRviewTests.swift; sourceTree = "<group>"; };
 		8ECAC8291DEE274100A033C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ECAC82E1DEE274100A033C9 /* HomeRoomAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeRoomAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8ECAC8321DEE274100A033C9 /* HRviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRviewUITests.swift; sourceTree = "<group>"; };
+		8ECAC8321DEE274100A033C9 /* HRviewAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRviewAppUITests.swift; sourceTree = "<group>"; };
 		8ECAC8341DEE274100A033C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EFDCCF31DF116C000DF9DA0 /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		8EFDCCF51DF120B000DF9DA0 /* MainMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
@@ -99,7 +107,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E467A2F1DF7B1E00039379D /* FBSDKShareKit.framework in Frameworks */,
 				4D9676F1E865022ABF6C8CE4 /* Pods_HomeRoomApp.framework in Frameworks */,
+				8E467A2D1DF7B1E00039379D /* FBSDKCoreKit.framework in Frameworks */,
+				8E467A2E1DF7B1E00039379D /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +191,7 @@
 		8E1494071DEE5AE800B1C7D1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E467A301DF7BF620039379D /* DataService.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -187,6 +199,9 @@
 		8E1494081DEE5AFE00B1C7D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8E467A2A1DF7B1E00039379D /* FBSDKCoreKit.framework */,
+				8E467A2B1DF7B1E00039379D /* FBSDKLoginKit.framework */,
+				8E467A2C1DF7B1E00039379D /* FBSDKShareKit.framework */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -195,8 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				8ECAC80E1DEE274100A033C9 /* HomeRoomApp */,
-				8ECAC8261DEE274100A033C9 /* HRviewTests */,
-				8ECAC8311DEE274100A033C9 /* HRviewUITests */,
+				8ECAC8261DEE274100A033C9 /* HRviewAppTests */,
+				8ECAC8311DEE274100A033C9 /* HRviewAppUITests */,
 				8ECAC80D1DEE274100A033C9 /* Products */,
 				8598AA5D631B2041958E0645 /* Pods */,
 				86435C03A1DB2719D65F41C7 /* Frameworks */,
@@ -228,27 +243,29 @@
 				8ECAC81B1DEE274100A033C9 /* LaunchScreen.storyboard */,
 				8ECAC81E1DEE274100A033C9 /* Info.plist */,
 				8EA248CA1DF3653100319037 /* GoogleService-Info.plist */,
-				8ECAC8161DEE274100A033C9 /* HRview.xcdatamodeld */,
+				8ECAC8161DEE274100A033C9 /* HomeRoomApp.xcdatamodeld */,
 			);
 			name = HomeRoomApp;
 			path = HRview;
 			sourceTree = "<group>";
 		};
-		8ECAC8261DEE274100A033C9 /* HRviewTests */ = {
+		8ECAC8261DEE274100A033C9 /* HRviewAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				8ECAC8271DEE274100A033C9 /* HRviewTests.swift */,
 				8ECAC8291DEE274100A033C9 /* Info.plist */,
 			);
+			name = HRviewAppTests;
 			path = HRviewTests;
 			sourceTree = "<group>";
 		};
-		8ECAC8311DEE274100A033C9 /* HRviewUITests */ = {
+		8ECAC8311DEE274100A033C9 /* HRviewAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8ECAC8321DEE274100A033C9 /* HRviewUITests.swift */,
+				8ECAC8321DEE274100A033C9 /* HRviewAppUITests.swift */,
 				8ECAC8341DEE274100A033C9 /* Info.plist */,
 			);
+			name = HRviewAppUITests;
 			path = HRviewUITests;
 			sourceTree = "<group>";
 		};
@@ -324,6 +341,7 @@
 					8ECAC80B1DEE274100A033C9 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 83M9X3N895;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -334,12 +352,14 @@
 					8ECAC8221DEE274100A033C9 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 83M9X3N895;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8ECAC80B1DEE274100A033C9;
 					};
 					8ECAC82D1DEE274100A033C9 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 83M9X3N895;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8ECAC80B1DEE274100A033C9;
 					};
@@ -451,6 +471,7 @@
 				8E0987061DEE94330082FE0A /* StyleTextField.swift in Sources */,
 				8EFDCCF41DF116C000DF9DA0 /* MainMenuVC.swift in Sources */,
 				8E09870C1DEFC1590082FE0A /* MenuCell.swift in Sources */,
+				8E467A311DF7BF620039379D /* DataService.swift in Sources */,
 				8EFDCCF81DF145D900DF9DA0 /* StyleTextView.swift in Sources */,
 				8E0987081DEE98810082FE0A /* LoginVC.swift in Sources */,
 				8E467A291DF629A70039379D /* StyleBtnMenu.swift in Sources */,
@@ -461,7 +482,7 @@
 				8E09870A1DEF87E80082FE0A /* FoodMenuVC.swift in Sources */,
 				8EFDCCFA1DF165BF00DF9DA0 /* FeedbackVC.swift in Sources */,
 				8EFDCD001DF172F600DF9DA0 /* QuizVC.swift in Sources */,
-				8ECAC8181DEE274100A033C9 /* HRview.xcdatamodeld in Sources */,
+				8ECAC8181DEE274100A033C9 /* HomeRoomApp.xcdatamodeld in Sources */,
 				8E0987101DEFE7540082FE0A /* StyleImage.swift in Sources */,
 				8ECAC8101DEE274100A033C9 /* AppDelegate.swift in Sources */,
 				8E9A94211DF225BD008AD88B /* HRElements.swift in Sources */,
@@ -482,7 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ECAC8331DEE274100A033C9 /* HRviewUITests.swift in Sources */,
+				8ECAC8331DEE274100A033C9 /* HRviewAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +642,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HomeRoomApp.entitlements;
 				DEVELOPMENT_TEAM = 83M9X3N895;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HRview",
+				);
 				INFOPLIST_FILE = HRview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpleCoding.HRview;
@@ -636,6 +661,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HomeRoomApp.entitlements;
 				DEVELOPMENT_TEAM = 83M9X3N895;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HRview",
+				);
 				INFOPLIST_FILE = HRview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.simpleCoding.HRview;
@@ -744,13 +773,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8ECAC8161DEE274100A033C9 /* HRview.xcdatamodeld */ = {
+		8ECAC8161DEE274100A033C9 /* HomeRoomApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8ECAC8171DEE274100A033C9 /* HRview.xcdatamodel */,
+				8ECAC8171DEE274100A033C9 /* HomeRoomApp.xcdatamodel */,
 			);
-			currentVersion = 8ECAC8171DEE274100A033C9 /* HRview.xcdatamodel */;
-			path = HRview.xcdatamodeld;
+			currentVersion = 8ECAC8171DEE274100A033C9 /* HomeRoomApp.xcdatamodel */;
+			path = HomeRoomApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
