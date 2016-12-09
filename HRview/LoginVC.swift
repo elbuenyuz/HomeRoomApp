@@ -40,12 +40,13 @@ class LoginVC: UIViewController {
                 
             }else{
                 //get session token
-                if let accesToken = FBSDKAccessToken.current(){
+                let accesToken = FBSDKAccessToken.current()
                     print("acces token \(accesToken)")
                 
                     //make conexion and save user in firebase
-                    let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accesToken.tokenString))
-                    
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accesToken?.tokenString)!)
+                
+                
                     //mandamos llamar la funcion
                     self.firebaseAuth(credential)
                     
@@ -55,7 +56,6 @@ class LoginVC: UIViewController {
                 }//end creating credentials
             }//end session token
         }//facceLoginWithReadPermissions
-    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
