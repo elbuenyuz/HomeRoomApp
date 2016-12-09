@@ -13,11 +13,16 @@ import MapKit
 
 class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
     
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var welcomeUserName: UILabel!
     
     fileprivate var _usernameTitle:String = ""
     var arrayImg = [UIImage]()
+    private var BASEMACS = [HRElements]()
+    
+    var popUpInfo = ErrorHandler()
     
     var usernameTitle:String{
         get{
@@ -41,8 +46,9 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         collectionView.dataSource = self
         collectionView.reloadData()
         
+        
         //create image array
-        for x in 0...6{
+        for x in ARRAY_NAMES_MENU{
             
             if let imgPath = UIImage(named: "\(x).png"){
                 
@@ -59,7 +65,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
+        //did Selected
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -121,6 +127,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //especific actiopn for segue.
+        
     }
 }
 

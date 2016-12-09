@@ -11,5 +11,5 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase’,’>= 2.5.1'
-
+pod 'SwiftyJSON'
 end

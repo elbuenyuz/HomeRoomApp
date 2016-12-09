@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
+import SwiftyJSON
 
 class LoginVC: UIViewController {
     
@@ -24,37 +25,72 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-    }
-    
-    
-    @IBAction func loginFbBtnPressed(_ sender: Any) {
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.value(forKey: KEY_UID) != nil{
+            //we change the view to the next one
+            if let name = UserDefaults.standard.value(forKey: KEY_USERNAME){
+              self.performSegue(withIdentifier: "goNext", sender: name)
+            }
+            self.performSegue(withIdentifier: "goNext", sender: "")
+        }
+
+    }
+    @IBAction func loginFbBtnPressed(_ sender: Any) {
         //create login
         let faceLogin = FBSDKLoginManager()
         
         //login with read permission
         faceLogin.logIn(withReadPermissions: ["email"], from: self){ (result,faceError) in
-            
+        
             if faceError != nil{
                 print(faceError.debugDescription)
                 
             }else{
                 //get session token
-                if let accesToken = FBSDKAccessToken.current(){
+                 let accesToken = FBSDKAccessToken.current()
                     print("acces token \(accesToken)")
-                
-                    //make conexion and save user in firebase
-                    let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accesToken.tokenString))
-                    
-                    //mandamos llamar la funcion
+   
+                    //credentials
+                    let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accesToken?.tokenString)!)
+                    //function firebaseAuth
                     self.firebaseAuth(credential)
-                    
-                    
-                    
-                    
-                }//end creating credentials
+                    self.fetchProfile()
+                
+  
+   
+                
             }//end session token
         }//facceLoginWithReadPermissions
+    }
+    
+    //fetch function , maybe in his own file
+    func fetchProfile(){
+     
+        //graphPath
+        let graphPath = "/me"
+        //creating the parameters
+        let parameters = ["fields":"email, name, first_name, last_name, age_range, gender, locale, picture.type(large)"]
+        
+        
+        FBSDKGraphRequest(graphPath: graphPath, parameters: parameters).start { (connection, result, error) in
+            if error != nil{
+                print(error.debugDescription)
+            }else{
+                let json = JSON(result!)
+                //user information
+                print(json)
+                let namePerson = json["name"].stringValue
+                let id = json["id"].stringValue
+                print("name person.\(namePerson)")
+                UserDefaults.standard.setValue(id,forKey:KEY_UID)
+                UserDefaults.standard.setValue(namePerson, forKey: KEY_USERNAME)
+
+                self.performSegue(withIdentifier: "goNext", sender: namePerson)
+            }
+        }
+        
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
@@ -70,7 +106,7 @@ class LoginVC: UIViewController {
                         
                         switch errCode {
                         case .errorCodeInvalidEmail:
-                            self.showErrorAlert("Invalid Email", msg:"please check your email and try again.")
+                            //self.showErrorAlert("Invalid Email", msg:"please check your email and try again.")
                             print("invalid email")
                         case .errorCodeEmailAlreadyInUse:
                             self.infoLabel.text = "Invalid email, this mail is already used."
@@ -114,15 +150,7 @@ class LoginVC: UIViewController {
         }
     }
     //func showe alert pop up
-    func showErrorAlert(_ title: String, msg: String){
-        
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-        
-    }
-    
+
     func firebaseAuth(_ credential:FIRAuthCredential){
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in

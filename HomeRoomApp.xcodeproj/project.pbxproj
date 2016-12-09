@@ -25,6 +25,9 @@
 		8E5DC8051DF61F3300B09E40 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DC8041DF61F3300B09E40 /* CreateAccountVC.swift */; };
 		8E9A94211DF225BD008AD88B /* HRElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9A94201DF225BD008AD88B /* HRElements.swift */; };
 		8EA248CB1DF3653100319037 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EA248CA1DF3653100319037 /* GoogleService-Info.plist */; };
+		8EB70D7F1DF9034900DCAF5E /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB70D7E1DF9034900DCAF5E /* ErrorHandler.swift */; };
+		8EB70D811DF92C7000DCAF5E /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB70D801DF92C7000DCAF5E /* Lobster.ttf */; };
+		8EB70D831DF940BD00DCAF5E /* MenuDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB70D821DF940BD00DCAF5E /* MenuDetailCell.swift */; };
 		8ECAC8101DEE274100A033C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC80F1DEE274100A033C9 /* AppDelegate.swift */; };
 		8ECAC8151DEE274100A033C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECAC8131DEE274100A033C9 /* Main.storyboard */; };
 		8ECAC8181DEE274100A033C9 /* HomeRoomApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8161DEE274100A033C9 /* HomeRoomApp.xcdatamodeld */; };
@@ -37,7 +40,7 @@
 		8EFDCCF81DF145D900DF9DA0 /* StyleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF71DF145D900DF9DA0 /* StyleTextView.swift */; };
 		8EFDCCFA1DF165BF00DF9DA0 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF91DF165BF00DF9DA0 /* FeedbackVC.swift */; };
 		8EFDCCFC1DF165D000DF9DA0 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCFB1DF165D000DF9DA0 /* ContactVC.swift */; };
-		8EFDCCFE1DF16A7900DF9DA0 /* SpecialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCFD1DF16A7900DF9DA0 /* SpecialsVC.swift */; };
+		8EFDCCFE1DF16A7900DF9DA0 /* MenuDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCFD1DF16A7900DF9DA0 /* MenuDetailVC.swift */; };
 		8EFDCD001DF172F600DF9DA0 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCFF1DF172F600DF9DA0 /* QuizVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		8E9A94201DF225BD008AD88B /* HRElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HRElements.swift; sourceTree = "<group>"; };
 		8EA248C91DF3632000319037 /* HomeRoomApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeRoomApp.entitlements; sourceTree = SOURCE_ROOT; };
 		8EA248CA1DF3653100319037 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8EB70D7E1DF9034900DCAF5E /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		8EB70D801DF92C7000DCAF5E /* Lobster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster.ttf; sourceTree = "<group>"; };
+		8EB70D821DF940BD00DCAF5E /* MenuDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailCell.swift; sourceTree = "<group>"; };
 		8ECAC80C1DEE274100A033C9 /* HomeRoomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRoomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECAC80F1DEE274100A033C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECAC8141DEE274100A033C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,7 +101,7 @@
 		8EFDCCF71DF145D900DF9DA0 /* StyleTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTextView.swift; sourceTree = "<group>"; };
 		8EFDCCF91DF165BF00DF9DA0 /* FeedbackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		8EFDCCFB1DF165D000DF9DA0 /* ContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
-		8EFDCCFD1DF16A7900DF9DA0 /* SpecialsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialsVC.swift; sourceTree = "<group>"; };
+		8EFDCCFD1DF16A7900DF9DA0 /* MenuDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailVC.swift; sourceTree = "<group>"; };
 		8EFDCCFF1DF172F600DF9DA0 /* QuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		A89766FE3B71BA4245486648 /* Pods-HomeRoomApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeRoomApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeRoomApp/Pods-HomeRoomApp.release.xcconfig"; sourceTree = "<group>"; };
 		B63C571D19B9B5DF10F6A948 /* Pods_HomeRoomApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeRoomApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,9 +161,9 @@
 				8E5DC8041DF61F3300B09E40 /* CreateAccountVC.swift */,
 				8EFDCCF31DF116C000DF9DA0 /* MainMenuVC.swift */,
 				8E0987091DEF87E80082FE0A /* FoodMenuVC.swift */,
+				8EFDCCFD1DF16A7900DF9DA0 /* MenuDetailVC.swift */,
 				8EFDCCF91DF165BF00DF9DA0 /* FeedbackVC.swift */,
 				8EFDCCFB1DF165D000DF9DA0 /* ContactVC.swift */,
-				8EFDCCFD1DF16A7900DF9DA0 /* SpecialsVC.swift */,
 				8EFDCCFF1DF172F600DF9DA0 /* QuizVC.swift */,
 			);
 			name = Controller;
@@ -175,6 +181,7 @@
 				8E0987111DEFF8E80082FE0A /* StyleView.swift */,
 				8EFDCCF71DF145D900DF9DA0 /* StyleTextView.swift */,
 				8E9A94201DF225BD008AD88B /* HRElements.swift */,
+				8EB70D7E1DF9034900DCAF5E /* ErrorHandler.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 			children = (
 				8E09870B1DEFC1590082FE0A /* MenuCell.swift */,
 				8EFDCCF51DF120B000DF9DA0 /* MainMenuCell.swift */,
+				8EB70D821DF940BD00DCAF5E /* MenuDetailCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 		8E1494081DEE5AFE00B1C7D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8EB70D801DF92C7000DCAF5E /* Lobster.ttf */,
 				8E467A2A1DF7B1E00039379D /* FBSDKCoreKit.framework */,
 				8E467A2B1DF7B1E00039379D /* FBSDKLoginKit.framework */,
 				8E467A2C1DF7B1E00039379D /* FBSDKShareKit.framework */,
@@ -390,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB70D811DF92C7000DCAF5E /* Lobster.ttf in Resources */,
 				8ECAC81D1DEE274100A033C9 /* LaunchScreen.storyboard in Resources */,
 				8ECAC81A1DEE274100A033C9 /* Assets.xcassets in Resources */,
 				8ECAC8151DEE274100A033C9 /* Main.storyboard in Resources */,
@@ -473,11 +483,13 @@
 				8E09870C1DEFC1590082FE0A /* MenuCell.swift in Sources */,
 				8E467A311DF7BF620039379D /* DataService.swift in Sources */,
 				8EFDCCF81DF145D900DF9DA0 /* StyleTextView.swift in Sources */,
+				8EB70D831DF940BD00DCAF5E /* MenuDetailCell.swift in Sources */,
 				8E0987081DEE98810082FE0A /* LoginVC.swift in Sources */,
 				8E467A291DF629A70039379D /* StyleBtnMenu.swift in Sources */,
 				8E0987041DEE93480082FE0A /* StyleButton.swift in Sources */,
+				8EB70D7F1DF9034900DCAF5E /* ErrorHandler.swift in Sources */,
 				8E0987121DEFF8E80082FE0A /* StyleView.swift in Sources */,
-				8EFDCCFE1DF16A7900DF9DA0 /* SpecialsVC.swift in Sources */,
+				8EFDCCFE1DF16A7900DF9DA0 /* MenuDetailVC.swift in Sources */,
 				8E1494101DEE5E2200B1C7D1 /* StyleLabel.swift in Sources */,
 				8E09870A1DEF87E80082FE0A /* FoodMenuVC.swift in Sources */,
 				8EFDCCFA1DF165BF00DF9DA0 /* FeedbackVC.swift in Sources */,
