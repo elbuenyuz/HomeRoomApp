@@ -29,8 +29,8 @@ class HRElements{
         return _ingredients
     }
     
-    fileprivate var _imgPath: String
-    var imgPath:String{
+    fileprivate var _imgPath: UIImage
+    var imgPath:UIImage{
         _imgPath = self.imgPath
         return _imgPath
         
@@ -61,7 +61,7 @@ class HRElements{
         return _description
     }
     
-    init(name:String,type:String,ingredients:String,imgPath:String,favorites:Bool,glutenFriendly:Bool,price:Double,description:String) {
+    init(name:String,type:String,ingredients:String,imgPath:UIImage,favorites:Bool,glutenFriendly:Bool,price:Double,description:String) {
         self._name = name
         self._ingredients = ingredients
         self._type = type

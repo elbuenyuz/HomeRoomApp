@@ -17,26 +17,27 @@ class CreateAccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = UserDefaults.standard.value(forKey: KEY_UID){
+            print("INFO : key user found")
+            performSegue(withIdentifier: "goNext", sender: nil)
+        }
+    }
+    //backBtnPressed
     @IBAction func backBtnPressed(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
     }
-    //function in charge of create a new user account
+  
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         //check all the texfields requirements
         if let name = usernameField.text, name != "", let email = emailField.text,email != "",let pwd = pwdField.text, pwd != "", let rePwd = rePwdField.text, rePwd == pwd{
             
             //create a new account user
-            FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (userResult, error) in
+            FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                 
                 if error != nil{
                     //handleling specific errors
@@ -56,7 +57,7 @@ class CreateAccountVC: UIViewController {
                            // self.infoLabel.text = "Network error, try again in a second."
                             print("network error")
                         case .errorCodeWrongPassword:
-                          //  self.infoLabel.text = "Wrong password, please make sure is correct."
+                            self.infoLabel.text = "Wrong password, please make sure is correct."
                             print("wrong password")
                             
                         default:
@@ -65,15 +66,11 @@ class CreateAccountVC: UIViewController {
                     }
                     
                 }else{
-                    //if an error doesn't exist
-                    //local memory we saved the user uid
-                    UserDefaults.standard.setValue(userResult?.uid,forKey:KEY_UID)
-                    //we saved the user name
-                    UserDefaults.standard.setValue(name, forKey: KEY_USERNAME)
-                    //SignInWithEmail
-                    FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: nil)
-                    self.performSegue(withIdentifier: "goNext", sender: name)
-                    
+                    if let user = user{
+                        print("INFO: user created and login success")
+                        let userData = ["provider":user.providerID]
+                        self.completeSignInWithName(id: user.uid, userData: userData)
+                    }
                 }
             })
         }else{
@@ -87,6 +84,12 @@ class CreateAccountVC: UIViewController {
                 destination.usernameTitle = userName
             }
         }
+    }
+    func completeSignInWithName(id: String, userData: Dictionary<String,String>){
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+        let userResult = UserDefaults.standard.setValue(id, forKey: KEY_UID)
+        print("INFO: data save to lcoal memory \(userResult)")
+        performSegue(withIdentifier: "goNext", sender: nil)
     }
 }
 

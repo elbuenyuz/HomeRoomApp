@@ -26,9 +26,15 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = UserDefaults.standard.value(forKey: KEY_UID){
+            print("INFO : key user found")
+            performSegue(withIdentifier: "goNext", sender: nil)
+        }
+    }
     
     @IBAction func loginFbBtnPressed(_ sender: Any) {
-        
+        print("INFOLOG: entra fbBtn")
         //create login
         let faceLogin = FBSDKLoginManager()
         
@@ -36,26 +42,18 @@ class LoginVC: UIViewController {
         faceLogin.logIn(withReadPermissions: ["email"], from: self){ (result,faceError) in
             
             if faceError != nil{
-                print(faceError.debugDescription)
+                print("ERROR: faceError.debugDescription")
+                
+            }else if result?.isCancelled == true{
+                print("ERROR: the auth with facebook was cancelled")
                 
             }else{
-                //get session token
-                let accesToken = FBSDKAccessToken.current()
-                    print("acces token \(accesToken)")
-                
-                    //make conexion and save user in firebase
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: (accesToken?.tokenString)!)
-                
-                
-                    //mandamos llamar la funcion
-                    self.firebaseAuth(credential)
-                    
-                    
-                    
-                    
-                }//end creating credentials
-            }//end session token
-        }//facceLoginWithReadPermissions
+                //make conexion and save user in firebase
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseAuth(credential)
+            }
+        }
+    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
@@ -86,33 +84,21 @@ class LoginVC: UIViewController {
                             print("wrong password")
                         default:
                             print("Create User Error: \(error)")
-                        }    
+                        }
                     }
                     
                 }else{
-                    //if an error doesn't exist
-                    //local memory we saved the user uid
-                    UserDefaults.standard.setValue(user?.uid,forKey:KEY_UID)
-                    UserDefaults.standard.setValue(username, forKey: KEY_USERNAME)
-                    //SignInWithEmail
-                    FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: nil)
-                    
-                    print("name of user: \(username)")
-                    self.performSegue(withIdentifier: "goNext", sender: username)
-                    
-                    
-                    
+                    //email log in success
+                    if let user = user{
+                        let userData = ["provider":user.providerID]
+                        self.completeSignInWithName(id: user.uid,userData: userData)
+                    }
                 }
             }
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? MainMenuVC{
-            if let userName = sender as? String{
-                destination.usernameTitle = userName
-            }
-        }
-    }
+    //prepareSegue
+    
     //func showe alert pop up
     func showErrorAlert(_ title: String, msg: String){
         
@@ -122,7 +108,7 @@ class LoginVC: UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
-    
+    //firebase Auth
     func firebaseAuth(_ credential:FIRAuthCredential){
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
@@ -131,7 +117,26 @@ class LoginVC: UIViewController {
                 
             }else{
                 print("info: succesfully auth with firebase")
+                if let user = user{
+                    let userData = ["provider":credential.provider]
+                    self.completeSignInWithName(id: user.uid,userData: userData)
+                }
             }
         })
     }
+    //signin with uid and name
+    func completeSignInWithName(id: String,userData: Dictionary<String,String>){
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+        UserDefaults.standard.setValue(id, forKey: KEY_UID)
+        print("INFO: data save to lcoal memory ")
+        performSegue(withIdentifier: "goNext", sender: nil)
+    }
+    
 }
+
+
+
+
+
+
+
