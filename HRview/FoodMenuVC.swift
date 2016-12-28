@@ -1,42 +1,60 @@
+//sections menu
+
+
 import UIKit
 import Foundation
+import Firebase
+
 
 class FoodMenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
+    let menuRef = DataService.ds.REF_MENU_SECTIONS
     
-    var numberToDisplay = 0
-    var arrayImg: [UIImage] = []
     
-    var arrayMacs : [HRElements] = []
-    
+    var menu = [ItemMenu]()
     
     //tableView Obj
     @IBOutlet weak var specialsOrMenuLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.reloadData()
-        
-        
-    }
-    
+    //backBtn
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         
+        //we observe if any value change we actualized the information ASAP
+       DataService.ds.REF_MENU_SECTIONS.observe(.value, with: {(snapshot) in
+            self.menu = [ItemMenu] ()
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                for snap in snapshot{
+                    if let dict = snap.value as? Dictionary<String,AnyObject>{
+                        let name =  dict["name"] as? String
+                        let imgPath = dict["imgPath"] as? String
+                        let img = UIImage(named:imgPath!)
+                        print("\(name),\(img)")
+                        
+                        let mac = ItemMenu(name: name!, img: img!)
+                        self.menu.append(mac)
+                        print("sale")
+                    }
+                }
+                
+            }
         
-        //functions later
-        //charged the image in to the array
+            self.menuRef.keepSynced(true)
+            self.tableView.reloadData()
+        })
         
-        
+       
         tableView.reloadData()
     }
     
@@ -48,20 +66,34 @@ class FoodMenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         //detect when selected
         if let cell = tableView.cellForRow(at: indexPath){
             
-            switch cell.tag {
-            case 0:
-                self.performSegue(withIdentifier: "ToDetailMenu", sender: arrayMacs)
-            case 1:
-                print("sides")
-            case 2:
-                print("specials")
-            case 3:
-                print("desserts")
-            case 4:
-                print("Drinks")
-            case 5:
-                print("togo")
+            let mac = menu[cell.tag]
+            print("\(mac.name)")
+            switch mac.name {
+            case "Mac & Cheese":
+                print("show information about Macs.")
+                sendReference(ref: DataService.ds.REF_MACS)
                 
+                break
+            case "Desserts":
+                print("show information about Desserts")
+                sendReference(ref: DataService.ds.REF_DESSERTS)
+
+                break
+            case "Specials":
+                print("show information about specials")
+                sendReference(ref: DataService.ds.REF_SPECIALS)
+
+                break
+            case "Drinks":
+                print("show information about drinks")
+                
+
+                break
+            case "Side & Salads":
+                print("show information about sides & salads")
+                sendReference(ref: DataService.ds.REF_SIDE_SALADS)
+
+                break
             default:
                 break
             }
@@ -71,23 +103,31 @@ class FoodMenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         
     }
     
+    func sendReference(ref: FIRDatabaseReference){
+        performSegue(withIdentifier: "detailMenu", sender: ref)
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return arrayImg.count
+        return menu.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("entra")
+        
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell") as? MenuCell{
-            cell.confCell(arrayImg[indexPath.row], named: ARRAY_MENU_NAMES[indexPath.row])
+            print("cell")
+            let mac = menu[indexPath.row]
+            let name = mac.name
+            let img = mac.img
+            print("\(name),\(img)")
+            cell.confCell(img, named: name)
             cell.tag = indexPath.row
-            print("\(arrayImg.count) array , and \(ARRAY_MENU_NAMES.count)" )
+            
             return cell
         }else{
             
@@ -95,13 +135,12 @@ class FoodMenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         }
         
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MenuDetailVC{
-            if let selectionArray = sender as? [HRElements]{
-                destination.arrayElements = selectionArray
+            if let ref = sender as? FIRDatabaseReference{
+                
+                destination.reference = ref
             }
         }
     }
-    
 }

@@ -14,6 +14,7 @@ import FBSDKCoreKit
 
 class LoginVC: UIViewController {
     
+    
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -23,6 +24,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        FIRDatabase.database().persistenceEnabled = true
         // Do any additional setup after loading the view.
     }
     
@@ -48,6 +50,7 @@ class LoginVC: UIViewController {
                 print("ERROR: the auth with facebook was cancelled")
                 
             }else{
+                print("sin error entra")
                 //make conexion and save user in firebase
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
@@ -118,6 +121,7 @@ class LoginVC: UIViewController {
             }else{
                 print("info: succesfully auth with firebase")
                 if let user = user{
+                    
                     let userData = ["provider":credential.provider]
                     self.completeSignInWithName(id: user.uid,userData: userData)
                 }
@@ -126,10 +130,12 @@ class LoginVC: UIViewController {
     }
     //signin with uid and name
     func completeSignInWithName(id: String,userData: Dictionary<String,String>){
+        
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         UserDefaults.standard.setValue(id, forKey: KEY_UID)
         print("INFO: data save to lcoal memory ")
         performSegue(withIdentifier: "goNext", sender: nil)
+
     }
     
 }

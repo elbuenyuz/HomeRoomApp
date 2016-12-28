@@ -81,7 +81,7 @@ class CreateAccountVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? MainMenuVC{
             if let userName = sender as? String{                
-                destination.usernameTitle = userName
+              
             }
         }
     }

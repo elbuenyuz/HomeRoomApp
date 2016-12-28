@@ -5,28 +5,47 @@
 //  Copyright © 2016 simpleCoding. All rights reserved.
 //
 import UIKit
-
+import Firebase
 
 
 class MenuDetailVC:UIViewController,UITableViewDataSource,UITableViewDelegate{
     
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
+    var reference: FIRDatabaseReference = DataService.ds.REF_BASE
     var numberToDisplay:Int!
-    
-    fileprivate var _arrayElements = [HRElements]()
-    
-    var arrayElements:[HRElements]{
-        get{
-            return _arrayElements
-        }
-        set{
-            _arrayElements = newValue
-        }
-    }
+
+    var menu = [Macs]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //charge the macs img and name
+        reference.observe(.value, with: {(snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                for snap in snapshot{
+                    if let dict = snap.value as? Dictionary<String,AnyObject>{
+                        
+                        let name =  dict["name"] as? String
+                        let imgPath = dict["imgPath"] as? String
+                        let img = UIImage(named:imgPath!)
+                        let price = dict["price"] as? String
+                        let pair = dict["pair"] as? String
+                        let ingredients = dict["ingredients"] as? String
+                        
+                        print("\(name),\(img)")
+                        let mac = Macs(name: name!, img:img!, ingredients:ingredients!, price:price!, likes:"100", pair:pair!)
+                        
+                        self.menu.append(mac)
+                    }
+                }
+            }
+            self.reference.keepSynced(true)//amazing refreshing the info
+            self.tableView.reloadData()
+        })
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,36 +66,13 @@ class MenuDetailVC:UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //        //detect when selected
-        //        if let cell = tableView.cellForRow(at: indexPath){
-        //
-        //            switch cell.tag {
-        //            case 0:
-        //                self.performSegue(withIdentifier: "ToDetailMenu", sender: arrayMacs)
-        //            case 1:
-        //                print("sides")
-        //            case 2:
-        //                print("specials")
-        //            case 3:
-        //                print("desserts")
-        //            case 4:
-        //                print("Drinks")
-        //            case 5:
-        //                print("togo")
-        //
-        //            default:
-        //                break
-        //            }
-        //
-        //
-        //        }
-        
+                
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return arrayElements.count
+        return menu.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,24 +82,30 @@ class MenuDetailVC:UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailMenu") as? MenuDetailCell{
-            let newItem = arrayElements[indexPath.row]
-            cell.confCell(newItem.imgPath, named: newItem.name)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell") as? MenuDetailCell{
+            print("cell")
+            let item = menu[indexPath.row]
+            let name = item.name
+            let img = item.img
+            let price = item.price
+            let ingredients = item.ingredients
+            let likes = item.likes
+            let pair = item.pair
+            print("\(name),\(img)")
+            
+            cell.confCell(img, named: name, ingredients: ingredients, price: price, pair: pair, likes: likes)
             cell.tag = indexPath.row
+            
             return cell
         }else{
             
             return UITableViewCell()
         }
-        
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? MenuDetailVC{
-            if let selectionArray = sender as? [HRElements]{
-                destination.arrayElements = selectionArray
-            }
-        }
+        
     }
     
 }

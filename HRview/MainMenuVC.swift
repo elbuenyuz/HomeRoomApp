@@ -19,23 +19,8 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     fileprivate var _usernameTitle:String = ""
     var arrayImg = [UIImage]()
     
-    var usernameTitle:String{
-        get{
-            return _usernameTitle
-        }
-        set{
-            _usernameTitle = newValue
-        }
-    }
-    
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        
-        //call the name of the user
-        welcomeUserName.text = "Welcome \(usernameTitle)"
         
         // Do any additional setup after loading the view.
         
@@ -79,10 +64,10 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        //cell creation
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as? MainMenuCell{
             
-            
+            //conf the cell
             cell.confCell(arrayImg[indexPath.row], lbNAme: ARRAY_NAMES_MENU[indexPath.row] ,index:indexPath)
             
             return cell
@@ -103,8 +88,8 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         return CGSize(width: 10, height: 10)
         
     }
-
     
+    // detected the item tapped
     @IBAction func ifBtnPressed(_ sender: AnyObject) {
         
         if let condition = sender.tag{

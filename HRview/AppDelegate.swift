@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  HRview
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         
        FIRApp.configure()
-       return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

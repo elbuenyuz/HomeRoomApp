@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 let DB_BASE = FIRDatabase.database().reference()
-
+let DB_BASE_IMG = FIRStorage.storage().reference()
 
 class DataService {
     
@@ -18,17 +18,31 @@ class DataService {
     //servicio de informacion
     static let ds = DataService()
     
+    //referencia de las imagenes
+    fileprivate var _REF_MAC_IMG = DB_BASE_IMG.child("macs")
+    
     //creamos la referencia a la url
     fileprivate var _REF_BASE = DB_BASE
+    fileprivate var _REF_SPECIALS = DB_BASE.child("specials")
     fileprivate var _REF_MACS = DB_BASE.child("macs")
     fileprivate var _REF_USERS = DB_BASE.child("users")
     fileprivate var _REF_FEEDBACK = DB_BASE.child("feedbacks")
     fileprivate var _REF_SIDES_SALADS = DB_BASE.child("salads")
     fileprivate var _REF_DESSERTS = DB_BASE.child("desserts")
+    fileprivate var _REF_MENU_SECTIONS = DB_BASE.child("menuSections")
+    
     
     //reference to image path
-    
-    
+    var REF_USERS:FIRDatabaseReference{
+        return _REF_USERS
+    }
+    var REF_SPECIALS: FIRDatabaseReference{
+        return _REF_SPECIALS
+    }
+    var REF_MAC_IMG:FIRStorageReference{
+        return _REF_MAC_IMG
+    }
+    //
     var REF_BASE: FIRDatabaseReference{
         return _REF_BASE
     }
@@ -37,20 +51,24 @@ class DataService {
         return _REF_MACS
     }
     
-    var REF_USERS:FIRDatabaseReference{
-        return _REF_USERS
-    }
     var REF_FEEDBACK: FIRDatabaseReference{
         return _REF_FEEDBACK
     }
+    
     var REF_SIDE_SALADS:FIRDatabaseReference{
         return _REF_SIDES_SALADS
     }
+    
     var REF_DESSERTS: FIRDatabaseReference{
         return _REF_DESSERTS
     }
+    
+    var REF_MENU_SECTIONS:FIRDatabaseReference{
+        return _REF_MENU_SECTIONS
+    }
+    
     func createFirebaseDBUser(uid: String,userData:Dictionary<String,String>){
-        REF_DESSERTS.child(uid).updateChildValues(userData)
+        REF_USERS.child(uid).updateChildValues(userData)
         
     }
     
