@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         
        FIRApp.configure()
-    
+        FIRDatabase.database().persistenceEnabled = true
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

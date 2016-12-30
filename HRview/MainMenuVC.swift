@@ -29,7 +29,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         collectionView.reloadData()
         
         //create image array
-        for x in 0...6{
+        for x in 0...5{
             
             if let imgPath = UIImage(named: "\(x).png"){
                 
@@ -46,8 +46,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     
     @IBAction func signOutTapped(_ sender: AnyObject) {
         //let keychainResult = KeychainWrapper.removeObjectForKey(KEY_UID)
-        let keychainResult = UserDefaults.standard.removeObject(forKey: KEY_UID)
-        print("INFO: ID removed from keychain \(keychainResult)")
+        UserDefaults.standard.removeObject(forKey: KEY_UID)
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }

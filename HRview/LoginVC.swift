@@ -15,7 +15,7 @@ import FBSDKCoreKit
 class LoginVC: UIViewController {
     
     
-    @IBOutlet weak var usernameField: UITextField!
+
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var infoLabel: UILabel!
@@ -24,7 +24,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FIRDatabase.database().persistenceEnabled = true
+        
         // Do any additional setup after loading the view.
     }
     
@@ -61,7 +61,7 @@ class LoginVC: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         
         //email and pwd diferent ""
-        if let email = emailField.text, email != "", let pwd = passwordField.text, pwd != "",let username = usernameField.text, username != ""{
+        if let email = emailField.text, email != "", let pwd = passwordField.text, pwd != ""{
             //if email and pwd exist we signin
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd) { (user, error) in
                 //if error
@@ -123,6 +123,8 @@ class LoginVC: UIViewController {
                 if let user = user{
                     
                     let userData = ["provider":credential.provider]
+                    
+                    
                     self.completeSignInWithName(id: user.uid,userData: userData)
                 }
             }

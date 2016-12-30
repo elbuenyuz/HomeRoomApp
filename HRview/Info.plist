@@ -20,9 +20,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>LobsterTwo-Italic.ttf</string>
-		<string>LobsterTwo-Bold.ttf</string>
-		<string>LobsterTwo-Regular.ttf</string>
+		<string>Pacifico-Regular.ttf</string>
 	</array>
 	<key>FacebookAppID</key>
 	<string>1810780662474598</string>

@@ -9,8 +9,6 @@ import Firebase
 class FoodMenuVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     let menuRef = DataService.ds.REF_MENU_SECTIONS
-    
-    
     var menu = [ItemMenu]()
     
     //tableView Obj

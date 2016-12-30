@@ -87,8 +87,7 @@ class CreateAccountVC: UIViewController {
     }
     func completeSignInWithName(id: String, userData: Dictionary<String,String>){
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
-        let userResult = UserDefaults.standard.setValue(id, forKey: KEY_UID)
-        print("INFO: data save to lcoal memory \(userResult)")
+        UserDefaults.standard.setValue(id, forKey: KEY_UID)
         performSegue(withIdentifier: "goNext", sender: nil)
     }
 }

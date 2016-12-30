@@ -16,12 +16,9 @@
 		8E0987101DEFE7540082FE0A /* StyleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E09870F1DEFE7540082FE0A /* StyleImage.swift */; };
 		8E0987121DEFF8E80082FE0A /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0987111DEFF8E80082FE0A /* StyleView.swift */; };
 		8E0CC9F91DFFA7990021FE6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E0CC9F81DFFA7990021FE6B /* Assets.xcassets */; };
-		8E0CC9FE1DFFBA870021FE6B /* LobsterTwo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E0CC9FA1DFFBA870021FE6B /* LobsterTwo-Bold.ttf */; };
-		8E0CC9FF1DFFBA870021FE6B /* LobsterTwo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E0CC9FB1DFFBA870021FE6B /* LobsterTwo-BoldItalic.ttf */; };
-		8E0CCA001DFFBA870021FE6B /* LobsterTwo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E0CC9FC1DFFBA870021FE6B /* LobsterTwo-Italic.ttf */; };
-		8E0CCA011DFFBA870021FE6B /* LobsterTwo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E0CC9FD1DFFBA870021FE6B /* LobsterTwo-Regular.ttf */; };
 		8E1494101DEE5E2200B1C7D1 /* StyleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E14940F1DEE5E2200B1C7D1 /* StyleLabel.swift */; };
 		8E1494121DEE5E4E00B1C7D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1494111DEE5E4E00B1C7D1 /* Constants.swift */; };
+		8E4611E11E161AB300842632 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E4611E01E161AB300842632 /* Pacifico-Regular.ttf */; };
 		8E467A291DF629A70039379D /* StyleBtnMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E467A281DF629A70039379D /* StyleBtnMenu.swift */; };
 		8E467A2D1DF7B1E00039379D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E467A2A1DF7B1E00039379D /* FBSDKCoreKit.framework */; };
 		8E467A2E1DF7B1E00039379D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E467A2B1DF7B1E00039379D /* FBSDKLoginKit.framework */; };
@@ -38,6 +35,7 @@
 		8ECAC81D1DEE274100A033C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECAC81B1DEE274100A033C9 /* LaunchScreen.storyboard */; };
 		8ECAC8281DEE274100A033C9 /* HRviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8271DEE274100A033C9 /* HRviewTests.swift */; };
 		8ECAC8331DEE274100A033C9 /* HRviewAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAC8321DEE274100A033C9 /* HRviewAppUITests.swift */; };
+		8EF3A4DF1E14A8DD0022EC3A /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3A4DE1E14A8DD0022EC3A /* Feedback.swift */; };
 		8EFDCCF41DF116C000DF9DA0 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF31DF116C000DF9DA0 /* MainMenuVC.swift */; };
 		8EFDCCF61DF120B000DF9DA0 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF51DF120B000DF9DA0 /* MainMenuCell.swift */; };
 		8EFDCCF81DF145D900DF9DA0 /* StyleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFDCCF71DF145D900DF9DA0 /* StyleTextView.swift */; };
@@ -73,12 +71,9 @@
 		8E09870F1DEFE7540082FE0A /* StyleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleImage.swift; sourceTree = "<group>"; };
 		8E0987111DEFF8E80082FE0A /* StyleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
 		8E0CC9F81DFFA7990021FE6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8E0CC9FA1DFFBA870021FE6B /* LobsterTwo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Bold.ttf"; sourceTree = "<group>"; };
-		8E0CC9FB1DFFBA870021FE6B /* LobsterTwo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-BoldItalic.ttf"; sourceTree = "<group>"; };
-		8E0CC9FC1DFFBA870021FE6B /* LobsterTwo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Italic.ttf"; sourceTree = "<group>"; };
-		8E0CC9FD1DFFBA870021FE6B /* LobsterTwo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Regular.ttf"; sourceTree = "<group>"; };
 		8E14940F1DEE5E2200B1C7D1 /* StyleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleLabel.swift; sourceTree = "<group>"; };
 		8E1494111DEE5E4E00B1C7D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E4611E01E161AB300842632 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		8E467A281DF629A70039379D /* StyleBtnMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleBtnMenu.swift; sourceTree = "<group>"; };
 		8E467A2A1DF7B1E00039379D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		8E467A2B1DF7B1E00039379D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -102,6 +97,7 @@
 		8ECAC82E1DEE274100A033C9 /* HomeRoomAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeRoomAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECAC8321DEE274100A033C9 /* HRviewAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRviewAppUITests.swift; sourceTree = "<group>"; };
 		8ECAC8341DEE274100A033C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EF3A4DE1E14A8DD0022EC3A /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		8EFDCCF31DF116C000DF9DA0 /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		8EFDCCF51DF120B000DF9DA0 /* MainMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		8EFDCCF71DF145D900DF9DA0 /* StyleTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleTextView.swift; sourceTree = "<group>"; };
@@ -178,7 +174,6 @@
 		8E1494051DEE5AD400B1C7D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8E1494111DEE5E4E00B1C7D1 /* Constants.swift */,
 				8E0987031DEE93480082FE0A /* StyleButton.swift */,
 				8E467A281DF629A70039379D /* StyleBtnMenu.swift */,
 				8E0987051DEE94330082FE0A /* StyleTextField.swift */,
@@ -188,6 +183,7 @@
 				8EFDCCF71DF145D900DF9DA0 /* StyleTextView.swift */,
 				8E9A94201DF225BD008AD88B /* Macs.swift */,
 				8EB43E141E0D06FF00B86C1E /* ItemMenu.swift */,
+				8EF3A4DE1E14A8DD0022EC3A /* Feedback.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -205,6 +201,7 @@
 		8E1494071DEE5AE800B1C7D1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E1494111DEE5E4E00B1C7D1 /* Constants.swift */,
 				8E467A301DF7BF620039379D /* DataService.swift */,
 			);
 			name = Utils;
@@ -213,10 +210,7 @@
 		8E1494081DEE5AFE00B1C7D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8E0CC9FA1DFFBA870021FE6B /* LobsterTwo-Bold.ttf */,
-				8E0CC9FB1DFFBA870021FE6B /* LobsterTwo-BoldItalic.ttf */,
-				8E0CC9FC1DFFBA870021FE6B /* LobsterTwo-Italic.ttf */,
-				8E0CC9FD1DFFBA870021FE6B /* LobsterTwo-Regular.ttf */,
+				8E4611E01E161AB300842632 /* Pacifico-Regular.ttf */,
 				8E467A2A1DF7B1E00039379D /* FBSDKCoreKit.framework */,
 				8E467A2B1DF7B1E00039379D /* FBSDKLoginKit.framework */,
 				8E467A2C1DF7B1E00039379D /* FBSDKShareKit.framework */,
@@ -408,13 +402,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E0CCA001DFFBA870021FE6B /* LobsterTwo-Italic.ttf in Resources */,
+				8E4611E11E161AB300842632 /* Pacifico-Regular.ttf in Resources */,
 				8ECAC81D1DEE274100A033C9 /* LaunchScreen.storyboard in Resources */,
-				8E0CC9FE1DFFBA870021FE6B /* LobsterTwo-Bold.ttf in Resources */,
 				8ECAC8151DEE274100A033C9 /* Main.storyboard in Resources */,
 				8E0CC9F91DFFA7990021FE6B /* Assets.xcassets in Resources */,
-				8E0CC9FF1DFFBA870021FE6B /* LobsterTwo-BoldItalic.ttf in Resources */,
-				8E0CCA011DFFBA870021FE6B /* LobsterTwo-Regular.ttf in Resources */,
 				8EA248CB1DF3653100319037 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +491,7 @@
 				8E0987041DEE93480082FE0A /* StyleButton.swift in Sources */,
 				8E0987121DEFF8E80082FE0A /* StyleView.swift in Sources */,
 				8EFDCCFE1DF16A7900DF9DA0 /* MenuDetallVC.swift in Sources */,
+				8EF3A4DF1E14A8DD0022EC3A /* Feedback.swift in Sources */,
 				8E1494101DEE5E2200B1C7D1 /* StyleLabel.swift in Sources */,
 				8E09870A1DEF87E80082FE0A /* FoodMenuVC.swift in Sources */,
 				8EFDCCFA1DF165BF00DF9DA0 /* FeedbackVC.swift in Sources */,

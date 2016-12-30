@@ -48,8 +48,10 @@ let MENU = "Menu"
 let ESPECIALS = "Specials"
 let FEEDBACK = "FeedBack"
 let CONTACT = "Contact"
-let QUIZ = "Quiz"
+let QUIZ = "Cheese Facts"
 let ABOUT_US = "About us"
+let TOGO = "To-go"
 
 // array names
-let ARRAY_NAMES_MENU = [MENU,ESPECIALS,FEEDBACK,CONTACT,QUIZ,ABOUT_US]
+let PICKERDATA_FEEDBACK = ["We need to work","New Ideas","App & Web-Site","Service","complements"]
+let ARRAY_NAMES_MENU = [MENU,QUIZ,FEEDBACK,TOGO,CONTACT]

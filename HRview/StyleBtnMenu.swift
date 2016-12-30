@@ -24,7 +24,7 @@ class StyleBtnMenu: UIButton {
         layer.shadowOpacity = 0.8
         layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         
-     self.tintColor = UIColor.yellow
+    
     }
 
 }

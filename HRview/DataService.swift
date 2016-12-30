@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 let DB_BASE = FIRDatabase.database().reference()
-let DB_BASE_IMG = FIRStorage.storage().reference()
+
 
 class DataService {
     
@@ -19,7 +19,7 @@ class DataService {
     static let ds = DataService()
     
     //referencia de las imagenes
-    fileprivate var _REF_MAC_IMG = DB_BASE_IMG.child("macs")
+   
     
     //creamos la referencia a la url
     fileprivate var _REF_BASE = DB_BASE
@@ -38,9 +38,6 @@ class DataService {
     }
     var REF_SPECIALS: FIRDatabaseReference{
         return _REF_SPECIALS
-    }
-    var REF_MAC_IMG:FIRStorageReference{
-        return _REF_MAC_IMG
     }
     //
     var REF_BASE: FIRDatabaseReference{
@@ -74,6 +71,12 @@ class DataService {
     
     func createNewMac(id:String,macData: Dictionary<String,String>){   
         REF_DESSERTS.child(id).updateChildValues(macData)
+        
+    }
+    
+    func createFeedback(uid:String, feedbackData:Dictionary<String,String>){
+        
+        REF_FEEDBACK.child(uid).updateChildValues(feedbackData)
         
     }
 }
