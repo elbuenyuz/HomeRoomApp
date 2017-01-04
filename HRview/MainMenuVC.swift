@@ -47,6 +47,7 @@ class MainMenuVC:UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     @IBAction func signOutTapped(_ sender: AnyObject) {
         //let keychainResult = KeychainWrapper.removeObjectForKey(KEY_UID)
         UserDefaults.standard.removeObject(forKey: KEY_UID)
+        UserDefaults.standard.removeObject(forKey: "email")// constant later
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }

@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
         let faceLogin = FBSDKLoginManager()
         
         //login with read permission
-        faceLogin.logIn(withReadPermissions: ["email"], from: self){ (result,faceError) in
+        faceLogin.logIn(withReadPermissions: ["public_profile","email"], from: self){ (result,faceError) in
             
             if faceError != nil{
                 print("ERROR: faceError.debugDescription")
@@ -53,6 +53,7 @@ class LoginVC: UIViewController {
                 print("sin error entra")
                 //make conexion and save user in firebase
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                
                 self.firebaseAuth(credential)
             }
         }
@@ -93,8 +94,8 @@ class LoginVC: UIViewController {
                 }else{
                     //email log in success
                     if let user = user{
-                        let userData = ["provider":user.providerID]
-                        self.completeSignInWithName(id: user.uid,userData: userData)
+                        let userData = ["provider":user.providerID,"email":user.email]
+                        self.completeSignInWithName(id: user.uid,userData: userData as! Dictionary<String, String>)
                     }
                 }
             }
@@ -111,7 +112,7 @@ class LoginVC: UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
-    //firebase Auth
+    //firebase Auth \\save facebook email
     func firebaseAuth(_ credential:FIRAuthCredential){
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
@@ -121,19 +122,19 @@ class LoginVC: UIViewController {
             }else{
                 print("info: succesfully auth with firebase")
                 if let user = user{
+                    //conseguir auth email
+                    let userData = ["provider":credential.provider,"email": user.email]
                     
-                    let userData = ["provider":credential.provider]
-                    
-                    
-                    self.completeSignInWithName(id: user.uid,userData: userData)
+                    self.completeSignInWithName(id: user.uid,userData: userData as! Dictionary<String,String>)
                 }
             }
         })
     }
-    //signin with uid and name
+    //signin with uid and name \\save login email
     func completeSignInWithName(id: String,userData: Dictionary<String,String>){
         
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+        UserDefaults.standard.setValue(userData["email"], forKey: "email")
         UserDefaults.standard.setValue(id, forKey: KEY_UID)
         print("INFO: data save to lcoal memory ")
         performSegue(withIdentifier: "goNext", sender: nil)

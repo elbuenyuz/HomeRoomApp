@@ -18,35 +18,21 @@ class FeedbackVC: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource{
     @IBOutlet weak var messageLbl: UITextView!
     var reference:FIRDatabaseReference = DataService.ds.REF_FEEDBACK
     var pickerData = PICKERDATA_FEEDBACK
-    
+    var selectedType:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedType = 0
         pickerView.dataSource = self
         pickerView.delegate = self
         // Do any additional setup after loading the view.
-        reference.observe(.value, with: {(snapshot) in
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot]{
-                for snap in snapshot{
-                    if let dict = snap.value as? Dictionary<String,String>{
-                        //checkout the information
-                        
-                    }
-                }
-            }
-        })
-    }
-
-    @IBAction func createFeedbackAttempt(_ sender: Any) {
-        
-        
+    
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func backBtnPressed(_ sender: Any) {
+    @IBAction func bckBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -57,7 +43,8 @@ class FeedbackVC: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         // if is selected..
-        
+        messageLbl.text = pickerData[row]
+        selectedType = row
         
     }
     
@@ -68,7 +55,10 @@ class FeedbackVC: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
-    
+    //try to send information
+    @IBAction func snedBtnPressed(_ sender: Any) {
+        
+    }
     
     
 }

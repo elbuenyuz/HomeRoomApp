@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 class CreateAccountVC: UIViewController {
+   
     @IBOutlet weak var usernameField: StyleTextField!
     @IBOutlet weak var emailField: StyleTextField!
     @IBOutlet weak var pwdField: StyleTextField!

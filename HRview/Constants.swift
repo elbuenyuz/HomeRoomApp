@@ -53,5 +53,5 @@ let ABOUT_US = "About us"
 let TOGO = "To-go"
 
 // array names
-let PICKERDATA_FEEDBACK = ["We need to work","New Ideas","App & Web-Site","Service","complements"]
+let PICKERDATA_FEEDBACK = ["","We need to work","New Ideas","App & Web-Site","Service","complements"]
 let ARRAY_NAMES_MENU = [MENU,QUIZ,FEEDBACK,TOGO,CONTACT]
